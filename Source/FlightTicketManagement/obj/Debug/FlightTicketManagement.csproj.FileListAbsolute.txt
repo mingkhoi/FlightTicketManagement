@@ -38,8 +38,6 @@ D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\Login\l
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\Login\signUp.baml
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainWindow.g.cs
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainWindow.baml
-D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\MainApp.g.cs
-D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\MainApp.baml
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\Resource\menuStyle.baml
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Dashboard.g.cs
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Dashboard.baml
@@ -55,3 +53,5 @@ D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\PlaneSchedule.baml
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Report.baml
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Setting.baml
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Main\MainApp.g.cs
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Main\MainApp.baml

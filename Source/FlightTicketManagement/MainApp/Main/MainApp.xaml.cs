@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,9 +19,11 @@ namespace FlightTicketManagement
     /// <summary>
     /// Interaction logic for MainApp.xaml
     /// </summary>
-    
-    public partial class MainApp : Window
+
+    public partial class MainApp : Window, INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         const int menuMarginButtonArea = 50;
         const float menuModeOpacity = 0.45f;
 
@@ -34,7 +37,19 @@ namespace FlightTicketManagement
 
         bool isMaximize = false;
         bool onHomeScreen = true;
+
         bool onMenuMode = false;
+        public bool checkMenuMode {
+            get { return onMenuMode; }
+            set {
+                onMenuMode = value;
+                
+                if (PropertyChanged != null) {
+                    PropertyChanged(this, 
+                        new PropertyChangedEventArgs("checkMenuMode"));
+                }
+            }
+        }
 
         List<Brush> buttonOrigionalColor = new List<Brush>();
 
@@ -125,7 +140,7 @@ namespace FlightTicketManagement
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e) {
-            
+
         }
 
         private void cancelBtn_Click(object sender, RoutedEventArgs e) {
@@ -133,12 +148,7 @@ namespace FlightTicketManagement
         }
 
         private void maximizeBtn_Click(object sender, RoutedEventArgs e) {
-            this.isMaximize = !this.isMaximize;
-
-            if (this.isMaximize) {
-                this.WindowState = WindowState.Maximized;
-            }
-            else this.WindowState = WindowState.Normal;
+            
         }
 
         private void minimizeBtn_Click(object sender, RoutedEventArgs e) {
@@ -146,11 +156,7 @@ namespace FlightTicketManagement
         }
 
         private void menuBtn_Click(object sender, RoutedEventArgs e) {
-            this.onMenuMode = !this.onMenuMode;
-
-            if (this.onMenuMode)
-                this.turnOnMenuMode();
-            else this.undoMenuMode();
+            this.checkMenuMode = !this.checkMenuMode;
         }
 
         private void tileBar_MouseDown(object sender, MouseButtonEventArgs e) {
@@ -161,7 +167,7 @@ namespace FlightTicketManagement
             this.turnOnHomeScreen();
 
             this.onHomeScreen = true;
-            this.onMenuMode = false;
+            this.checkMenuMode = false;
         }
 
         private void turnOffHomeScreen() {
@@ -184,7 +190,7 @@ namespace FlightTicketManagement
             bringToFrontControlByName("DashboardCtrl");
 
             this.onHomeScreen = false;
-            this.onMenuMode = false;
+            this.checkMenuMode = false;
         }
 
         private void planeScheduleBtn_Click(object sender, RoutedEventArgs e) {
@@ -194,7 +200,7 @@ namespace FlightTicketManagement
             bringToFrontControlByName("PlaneScheduleCtrl");
 
             this.onHomeScreen = false;
-            this.onMenuMode = false;
+            this.checkMenuMode = false;
         }
 
         private void createTicketBtn_Click(object sender, RoutedEventArgs e) {
@@ -204,7 +210,7 @@ namespace FlightTicketManagement
             bringToFrontControlByName("CreateTicketCtrl");
 
             this.onHomeScreen = false;
-            this.onMenuMode = false;
+            this.checkMenuMode = false;
         }
 
         private void reportBtn_Click(object sender, RoutedEventArgs e) {
@@ -214,7 +220,7 @@ namespace FlightTicketManagement
             bringToFrontControlByName("ReportCtrl");
 
             this.onHomeScreen = false;
-            this.onMenuMode = false;
+            this.checkMenuMode = false;
         }
 
         private void planeListBtn_Click(object sender, RoutedEventArgs e) {
@@ -224,7 +230,7 @@ namespace FlightTicketManagement
             bringToFrontControlByName("PlaneListCtrl");
 
             this.onHomeScreen = false;
-            this.onMenuMode = false;
+            this.checkMenuMode = false;
         }
 
         private void settingBtn_Click(object sender, RoutedEventArgs e) {
@@ -234,7 +240,7 @@ namespace FlightTicketManagement
             bringToFrontControlByName("SettingCtrl");
 
             this.onHomeScreen = false;
-            this.onMenuMode = false;
+            this.checkMenuMode = false;
         }
 
         private void donateBtn_Click(object sender, RoutedEventArgs e) {
@@ -244,7 +250,7 @@ namespace FlightTicketManagement
             bringToFrontControlByName("DonateCtrl");
 
             this.onHomeScreen = false;
-            this.onMenuMode = false;
+            this.checkMenuMode = false;
         }
     }
 }

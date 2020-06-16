@@ -105,7 +105,7 @@
                 Background="#CCFFFFFF">
         </Border>
 
-        <TextBlock Text="MinTus Airline"
+        <TextBlock Text="MingTuf Airline"
                    FontSize="25"
                    FontWeight="Bold"
                    Margin="5, 0, 0, 0"

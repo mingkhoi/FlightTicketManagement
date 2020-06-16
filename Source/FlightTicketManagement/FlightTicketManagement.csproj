@@ -84,7 +84,7 @@
     <Compile Include="MainApp\Dashboard.xaml.cs">
       <DependentUpon>Dashboard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainApp\MainApp.xaml.cs">
+    <Compile Include="MainApp\Main\MainApp.xaml.cs">
       <DependentUpon>MainApp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Login\signUp.xaml.cs">
@@ -115,7 +115,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainApp\MainApp.xaml">
+    <Page Include="MainApp\Main\MainApp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

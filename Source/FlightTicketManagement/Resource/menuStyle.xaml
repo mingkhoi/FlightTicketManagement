@@ -33,7 +33,7 @@
                      Color="#FFADB2B5" />
     <SolidColorBrush x:Key="Button.Disabled.Foreground"
                      Color="#FF838383" />
-    
+
     <Style x:Key="menuStyle"
            TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle"
@@ -45,7 +45,7 @@
         <Setter Property="Foreground"
                 Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" />
         <Setter Property="BorderThickness"
-                Value="1" />
+                Value="0" />
         <Setter Property="HorizontalContentAlignment"
                 Value="Center" />
         <Setter Property="VerticalContentAlignment"
@@ -69,6 +69,7 @@
                                           SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </Border>
+                    
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsDefaulted"
                                  Value="true">
@@ -78,18 +79,15 @@
                         </Trigger>
                         <Trigger Property="IsMouseOver"
                                  Value="true">
-                            <Setter Property="BorderBrush"
+                            <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#85C1E9" />
-                            <Setter Property="BorderThickness"
-                                    TargetName="border"
-                                    Value="3" />
+                                    Value="#FF86BAD9" />
                         </Trigger>
                         <Trigger Property="IsPressed"
                                  Value="true">
                             <Setter Property="BorderBrush"
                                     TargetName="border"
-                                    Value="#85C1E9" />
+                                    Value="#FF86BAD9" />
                         </Trigger>
                         <Trigger Property="IsEnabled"
                                  Value="false">

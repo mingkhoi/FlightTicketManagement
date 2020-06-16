@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:FlightTicketManagement"
              mc:Ignorable="d" 
              d:DesignHeight="724" d:DesignWidth="1012"
-             Background="Aqua">
+             Background="White">
     <Grid>
         <TextBlock FontSize="50">Dashboard</TextBlock>
     </Grid>
