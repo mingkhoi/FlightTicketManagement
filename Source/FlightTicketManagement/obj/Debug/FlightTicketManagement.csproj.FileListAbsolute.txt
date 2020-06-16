@@ -41,3 +41,17 @@ D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainWin
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\MainApp.g.cs
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\MainApp.baml
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\Resource\menuStyle.baml
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Dashboard.g.cs
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Dashboard.baml
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\CreateTicket.g.cs
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Donate.g.cs
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\PlaneList.g.cs
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\PlaneSchedule.g.cs
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Report.g.cs
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Setting.g.cs
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\CreateTicket.baml
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Donate.baml
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\PlaneList.baml
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\PlaneSchedule.baml
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Report.baml
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\Setting.baml

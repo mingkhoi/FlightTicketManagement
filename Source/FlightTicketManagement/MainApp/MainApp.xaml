@@ -217,6 +217,7 @@
                                     Height="150"
                                     Margin="10"
                                     Background="#FF9A9F63"
+                                    Click="dashBoardBtn_Click"
                                     Style="{StaticResource tileButton}">
                                 <TextBlock Text="DashBoard"
                                            HorizontalAlignment="Center"
@@ -231,6 +232,7 @@
                                     Height="150"
                                     Margin="10"
                                     Background="#FFA58757"
+                                    Click="planeScheduleBtn_Click"
                                     Style="{StaticResource tileButton}">
                                 <TextBlock Text="Lập Lịch Máy Bay"
                                            HorizontalAlignment="Center"
@@ -245,6 +247,7 @@
                                     Height="150"
                                     Margin="10"
                                     Background="#FF6B3636"
+                                    Click="createTicketBtn_Click"
                                     Style="{StaticResource tileButton}">
                                 <TextBlock Text="Tạo Vé Máy Bay"
                                            HorizontalAlignment="Center"
@@ -259,6 +262,7 @@
                                     Height="150"
                                     Margin="10"
                                     Background="#FF6DA05A"
+                                    Click="reportBtn_Click"
                                     Style="{StaticResource tileButton}">
                                 <TextBlock Text="Báo Cáo Doanh Thu"
                                            HorizontalAlignment="Center"
@@ -273,6 +277,7 @@
                                     Height="150"
                                     Margin="10"
                                     Background="#FF7E5886"
+                                    Click="planeListBtn_Click"
                                     Style="{StaticResource tileButton}">
                                 <TextBlock Text="Danh Sách Chuyến Bay"
                                            HorizontalAlignment="Center"
@@ -287,6 +292,7 @@
                                     Height="150"
                                     Margin="10"
                                     Background="#FF407480"
+                                    Click="settingBtn_Click"
                                     Style="{StaticResource tileButton}">
                                 <TextBlock Text="Cài Đặt"
                                            HorizontalAlignment="Center"
@@ -301,6 +307,7 @@
                                     Height="150"
                                     Margin="10"
                                     Background="#FF806E52"
+                                    Click="donateBtn_Click"
                                     Style="{StaticResource tileButton}">
                                 <TextBlock Text="Donate Ủng Hộ Nhà Phát Triển"
                                            HorizontalAlignment="Center"
@@ -320,7 +327,16 @@
             <Grid x:Name="userControlGrid"
                   Grid.Row="1"
                   Background="Transparent"
+                  Visibility="Hidden"
                   Panel.ZIndex="-1">
+                
+                <local:Dashboard x:Name="DashboardCtrl"></local:Dashboard>
+                <local:PlaneSchedule x:Name="PlaneScheduleCtrl"></local:PlaneSchedule>
+                <local:CreateTicket x:Name="CreateTicketCtrl"></local:CreateTicket>
+                <local:Report x:Name="ReportCtrl"></local:Report>
+                <local:PlaneList x:Name="PlaneListCtrl"></local:PlaneList>
+                <local:Setting x:Name="SettingCtrl"></local:Setting>
+                <local:Donate x:Name="DonateCtrl"></local:Donate>
             </Grid>
         </Grid>
     </Border>

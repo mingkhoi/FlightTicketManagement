@@ -1,8 +1,14 @@
 ﻿
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\App.xaml;;
+FD:\FlightTicketManagement-master\Source\FlightTicketManagement\MainApp\CreateTicket.xaml;;
+FD:\FlightTicketManagement-master\Source\FlightTicketManagement\MainApp\Donate.xaml;;
+FD:\FlightTicketManagement-master\Source\FlightTicketManagement\MainApp\Dashboard.xaml;;
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\Login\login.xaml;;
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\MainApp\MainApp.xaml;;
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\MainWindow.xaml;;
+FD:\FlightTicketManagement-master\Source\FlightTicketManagement\MainApp\PlaneList.xaml;;
+FD:\FlightTicketManagement-master\Source\FlightTicketManagement\MainApp\PlaneSchedule.xaml;;
+FD:\FlightTicketManagement-master\Source\FlightTicketManagement\MainApp\Report.xaml;;
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\Resource\Art\artResource.xaml;;
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\Resource\menuStyle.xaml;;
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\Resource\tileButton.xaml;;
@@ -10,4 +16,5 @@ FD:\FlightTicketManagement-master\Source\FlightTicketManagement\Login\signUp.xam
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\Resource\loginButton.xaml;;
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\Resource\resource.xaml;;
 FD:\FlightTicketManagement-master\Source\FlightTicketManagement\Resource\tileBarButton.xaml;;
+FD:\FlightTicketManagement-master\Source\FlightTicketManagement\MainApp\Setting.xaml;;
 

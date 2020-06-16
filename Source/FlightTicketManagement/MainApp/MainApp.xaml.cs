@@ -50,10 +50,12 @@ namespace FlightTicketManagement
 
         void bringToFront(UIElement control) {
             Canvas.SetZIndex(control, controlTopLayer);
+            control.Visibility = Visibility.Visible;
         }
 
         void sendToBack(UIElement control) {
             Canvas.SetZIndex(control, controlBottomLayer);
+            control.Visibility = Visibility.Hidden;
         }
 
         void turnOnMenuMode() {
@@ -164,6 +166,85 @@ namespace FlightTicketManagement
 
         private void turnOffHomeScreen() {
             this.homeGrid.Visibility = Visibility.Hidden;
+        }
+
+        public void bringToFrontControlByName(string name) {
+            foreach (var item in userControlGrid.Children) {
+                if ((item as UserControl).Name == name) {
+                    bringToFront(item as UserControl);
+                }
+                else sendToBack(item as UserControl);
+            }
+        }
+
+        private void dashBoardBtn_Click(object sender, RoutedEventArgs e) {
+            bringToFront(userControlGrid);
+            sendToBack(homeGrid);
+
+            bringToFrontControlByName("DashboardCtrl");
+
+            this.onHomeScreen = false;
+            this.onMenuMode = false;
+        }
+
+        private void planeScheduleBtn_Click(object sender, RoutedEventArgs e) {
+            bringToFront(userControlGrid);
+            sendToBack(homeGrid);
+
+            bringToFrontControlByName("PlaneScheduleCtrl");
+
+            this.onHomeScreen = false;
+            this.onMenuMode = false;
+        }
+
+        private void createTicketBtn_Click(object sender, RoutedEventArgs e) {
+            bringToFront(userControlGrid);
+            sendToBack(homeGrid);
+
+            bringToFrontControlByName("CreateTicketCtrl");
+
+            this.onHomeScreen = false;
+            this.onMenuMode = false;
+        }
+
+        private void reportBtn_Click(object sender, RoutedEventArgs e) {
+            bringToFront(userControlGrid);
+            sendToBack(homeGrid);
+
+            bringToFrontControlByName("ReportCtrl");
+
+            this.onHomeScreen = false;
+            this.onMenuMode = false;
+        }
+
+        private void planeListBtn_Click(object sender, RoutedEventArgs e) {
+            bringToFront(userControlGrid);
+            sendToBack(homeGrid);
+
+            bringToFrontControlByName("PlaneListCtrl");
+
+            this.onHomeScreen = false;
+            this.onMenuMode = false;
+        }
+
+        private void settingBtn_Click(object sender, RoutedEventArgs e) {
+            bringToFront(userControlGrid);
+            sendToBack(homeGrid);
+
+            bringToFrontControlByName("SettingCtrl");
+
+            this.onHomeScreen = false;
+            this.onMenuMode = false;
+        }
+
+        private void donateBtn_Click(object sender, RoutedEventArgs e) {
+            bringToFront(userControlGrid);
+            sendToBack(homeGrid);
+
+            bringToFrontControlByName("DonateCtrl");
+
+            this.onHomeScreen = false;
+            this.onMenuMode = false;
         }
     }
 }
