@@ -10,19 +10,23 @@
         AllowsTransparency="True"
         Title="MainApp"
         Height="768"
-        Width="1024">
+        Width="1024"
+        Loaded="Window_Loaded">
     <Window.Resources>
 
     </Window.Resources>
 
-    <Border Padding="5">
-        <Border.Effect>
-            <DropShadowEffect BlurRadius="7"
-                              Direction="220"
-                              RenderingBias="Performance"
-                              ShadowDepth="2" />
-        </Border.Effect>
+    <Border BorderThickness="1"
+            BorderBrush="Black"
+            Padding="5">
         <Grid>
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="5"
+                                  Direction="220"
+                                  RenderingBias="Performance"
+                                  ShadowDepth="2" />
+            </Grid.Effect>
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="32" />
                 <RowDefinition Height="*" />
@@ -130,16 +134,20 @@
             <Grid Grid.Row="1"
                   x:Name="homeGrid">
 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="178*" />
+                    <ColumnDefinition Width="329*" />
+                </Grid.ColumnDefinitions>
+
                 <TextBlock Text="Flight Ticket"
                            x:Name="appTile"
                            FontSize="45"
                            FontWeight="UltraBold"
-                           Margin="10,10,206.701,646.4"
+                           Margin="10,10,0,0"
                            HorizontalAlignment="Left"
-                           VerticalAlignment="Top"
-                           Grid.ColumnSpan="2" />
+                           VerticalAlignment="Top" />
 
-                <StackPanel Margin="0,10,10,0"
+                <StackPanel Margin="0,10,10.4,0"
                             Orientation="Horizontal"
                             FlowDirection="RightToLeft"
                             MaxWidth="610"
@@ -147,7 +155,6 @@
                             HorizontalAlignment="Right"
                             VerticalAlignment="Top"
                             x:Name="userArea"
-                            Grid.ColumnSpan="2"
                             Grid.Column="1">
 
                     <Image Source="{StaticResource man}"
@@ -169,7 +176,9 @@
                 <Border BorderThickness="1"
                         BorderBrush="Black"
                         CornerRadius="10"
-                        Margin="50, 150, 50, 50">
+                        Margin="50,150,50,50"
+                        Grid.ColumnSpan="2"
+                        x:Name="buttonArea">
                     <ScrollViewer VerticalScrollBarVisibility="Hidden"
                                   HorizontalScrollBarVisibility="Disabled"
                                   x:Name="scrollView">
@@ -235,7 +244,7 @@
                                     Width="280"
                                     Height="150"
                                     Margin="10"
-                                    Background="#FFAE6855"
+                                    Background="#FF6B3636"
                                     Style="{StaticResource tileButton}">
                                 <TextBlock Text="Tạo Vé Máy Bay"
                                            HorizontalAlignment="Center"
@@ -301,62 +310,6 @@
                                            FontSize="30"
                                            FontWeight="Bold" />
                             </Button>
-                            <Button x:Name="abcd"
-                                    Width="280"
-                                    Height="150"
-                                    Margin="10"
-                                    Background="#FF919455"
-                                    Style="{StaticResource tileButton}">
-                                <TextBlock Text="Hello Mọi Người"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           TextWrapping="Wrap"
-                                           Foreground="White"
-                                           FontSize="30"
-                                           FontWeight="Bold" />
-                            </Button>
-                            <Button x:Name="abcde"
-                                    Width="280"
-                                    Height="150"
-                                    Margin="10"
-                                    Background="#FF805252"
-                                    Style="{StaticResource tileButton}">
-                                <TextBlock Text="Cái Này Kéo Xuống Được, Thêm Button vào thôi"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           TextWrapping="Wrap"
-                                           Foreground="White"
-                                           FontSize="30"
-                                           FontWeight="Bold" />
-                            </Button>
-                            <Button x:Name="abcder"
-                                    Width="280"
-                                    Height="150"
-                                    Margin="10"
-                                    Background="#FF653C5F"
-                                    Style="{StaticResource tileButton}">
-                                <TextBlock Text="Code Này Sai Một Đống Chính Tả, Coder Ngựa Bà Dùng English"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           TextWrapping="Wrap"
-                                           Foreground="White"
-                                           FontSize="30"
-                                           FontWeight="Bold" />
-                            </Button>
-                            <Button x:Name="abcdef"
-                                    Width="280"
-                                    Height="150"
-                                    Margin="10"
-                                    Background="#FF23654E"
-                                    Style="{StaticResource tileButton}">
-                                <TextBlock Text="Button tào lào xóa dùm nhé, ahihi"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center"
-                                           TextWrapping="Wrap"
-                                           Foreground="White"
-                                           FontSize="30"
-                                           FontWeight="Bold" />
-                            </Button>
 
                         </WrapPanel>
                     </ScrollViewer>
@@ -365,8 +318,9 @@
             </Grid>
 
             <Grid x:Name="userControlGrid"
-                  Grid.Row="1">
-
+                  Grid.Row="1"
+                  Background="Transparent"
+                  Panel.ZIndex="-1">
             </Grid>
         </Grid>
     </Border>

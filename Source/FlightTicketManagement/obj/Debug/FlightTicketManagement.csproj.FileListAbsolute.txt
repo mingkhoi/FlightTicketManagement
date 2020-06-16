@@ -25,12 +25,6 @@ D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\FlightT
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.GenerateResource.cache
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\FlightTicketManagement.exe
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\FlightTicketManagement.pdb
-D:\FlightTicketManagement-master\Source\FlightTicketManagement\bin\Debug\MaterialDesignColors.dll
-D:\FlightTicketManagement-master\Source\FlightTicketManagement\bin\Debug\MaterialDesignThemes.Wpf.dll
-D:\FlightTicketManagement-master\Source\FlightTicketManagement\bin\Debug\MaterialDesignColors.pdb
-D:\FlightTicketManagement-master\Source\FlightTicketManagement\bin\Debug\MaterialDesignThemes.Wpf.pdb
-D:\FlightTicketManagement-master\Source\FlightTicketManagement\bin\Debug\MaterialDesignThemes.Wpf.xml
-D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.CopyComplete
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\App.baml
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\Resource\loginButton.baml
@@ -46,3 +40,4 @@ D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainWin
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainWindow.baml
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\MainApp.g.cs
 D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\MainApp\MainApp.baml
+D:\FlightTicketManagement-master\Source\FlightTicketManagement\obj\Debug\Resource\menuStyle.baml
