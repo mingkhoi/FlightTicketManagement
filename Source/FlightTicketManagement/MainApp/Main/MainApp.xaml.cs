@@ -61,6 +61,7 @@ namespace FlightTicketManagement
                 buttonOrigionalColor.Add((item as Button).Background);
             }
             origionMarginButtonArea = this.buttonArea.Margin;
+           
         }
 
         void bringToFront(UIElement control) {

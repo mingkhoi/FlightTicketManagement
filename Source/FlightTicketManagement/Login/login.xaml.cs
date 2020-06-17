@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlightTicketManagement.Helper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,19 +24,25 @@ namespace FlightTicketManagement
     {
         public login() {
             InitializeComponent();
+
         }
 
         private void onMainAppClose(object sender, EventArgs e) {
             MainWindow.Instance.Close();
         }
 
-        private void login_Click(object sender, RoutedEventArgs e) {
-            MainWindow.Instance.Hide();
+        private async void login_Click(object sender, RoutedEventArgs e) {
+            if (await APIHelper.Instance.Authenticate(userName.Text, passWord.Password))
 
-            MainApp newApp = new MainApp();
-            newApp.Closed += new EventHandler(onMainAppClose);
-            newApp.Show();
+            {
+                MainWindow.Instance.Hide();
+                MainApp newApp = new MainApp();
+                newApp.Closed += new EventHandler(onMainAppClose);
+                newApp.Show();
+            }
         }
+
+
 
         private void signUp_Click(object sender, RoutedEventArgs e) {
             MainWindow.Instance.switchToSignUp();
