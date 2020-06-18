@@ -103,3 +103,5 @@ D:\Coding\GUI\Source\FlightTicketManagement\obj\Debug\FlightTicketManagement.csp
 D:\Coding\GUI\Source\FlightTicketManagement\obj\Debug\FlightTicketManagement.csproj.CopyComplete
 D:\Coding\GUI\Source\FlightTicketManagement\obj\Debug\FlightTicketManagement.exe
 D:\Coding\GUI\Source\FlightTicketManagement\obj\Debug\FlightTicketManagement.pdb
+D:\Coding\GUI\Source\FlightTicketManagement\bin\Debug\DTO.dll
+D:\Coding\GUI\Source\FlightTicketManagement\bin\Debug\DTO.pdb

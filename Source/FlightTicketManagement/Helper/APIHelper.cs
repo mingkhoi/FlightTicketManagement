@@ -1,4 +1,4 @@
-﻿using FlightTicketManagement.DTO;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,29 +7,32 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace FlightTicketManagement.Helper
 {
-    public class APIHelper 
+    public class APIHelper<T>
     {
-        private AuthenticatedUser user { get; set; }
+        private AuthenticatedUser user;
         private HttpClient apiClient { get ; set ; }
         private APIHelper()
         {
             InitializeClient();
         }
-        private static APIHelper instance = null;
-        public static APIHelper Instance
+        private static APIHelper<T> instance = null;
+        public static APIHelper<T> Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new APIHelper();
+                    instance = new APIHelper<T>();
                 }
                 return instance;
             }
         }
+
+        public AuthenticatedUser User { get => user; set => user = value; }
 
         private void InitializeClient()
         {
@@ -39,28 +42,75 @@ namespace FlightTicketManagement.Helper
             apiClient.DefaultRequestHeaders.Accept.Clear();
             apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
-        public async Task<bool> Authenticate(string userName, string passWord)
+      
+        public async Task<T> Get (string route)
         {
-            //var data = new FormUrlEncodedContent(new[]
-            //{
-            //    new KeyValuePair<string,string>("username",username),
-            //    new KeyValuePair<string,string>("password",password)
-
-            //});
-            var userLogin = new User { username = userName, password = passWord };
-            using (HttpResponseMessage response = await apiClient.PostAsJsonAsync(ApiRoutes.Account.LogIn,userLogin))
+            using (HttpResponseMessage response = await apiClient.GetAsync(route))
             {
-                Console.WriteLine(response.Content);
+
                 if (response.IsSuccessStatusCode)
                 {
-                    user = await response.Content.ReadAsAsync<AuthenticatedUser>();
-                    return true;
+                    var data = await response.Content.ReadAsAsync<T>();
+                    if(data != null)
+                        return data;
                 }
-                    return false;
-
-              
-               
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+                return default;
             }
         }
+        public async Task<List<T>> GetAll(string route)
+        {
+            using (HttpResponseMessage response = await apiClient.GetAsync(route))
+            {
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var data = await response.Content.ReadAsAsync<List<T>>();
+                    if (data != null)
+                        return data;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+                return default;
+            }
+        }
+
+        public async Task<bool> Post(string route, object body)
+        {
+            using (HttpResponseMessage response = await apiClient.PostAsJsonAsync(route, body))
+            {
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+
+        //public async Task<bool> Update(string route, )
+        //{
+        //    using (HttpResponseMessage response = await apiClient.GetAsync(route))
+        //    {
+
+        //        if (response.IsSuccessStatusCode)
+        //        {
+        //            var data = await response.Content.ReadAsAsync<List<T>>();
+        //            if (data != null)
+        //                return data;
+        //        }
+        //        else
+        //        {
+        //            throw new Exception(response.ReasonPhrase);
+        //        }
+        //        return default;
+        //    }
+        //}
+
     }
 }

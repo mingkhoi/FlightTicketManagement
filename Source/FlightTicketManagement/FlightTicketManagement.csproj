@@ -82,10 +82,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DTO\AuthenticatedUser.cs" />
-    <Compile Include="DTO\User.cs" />
     <Compile Include="Helper\APIHelper.cs" />
     <Compile Include="Helper\ApiRoute.cs" />
+    <Compile Include="Helper\Authenticater.cs" />
+    <Compile Include="Helper\FlightManager.cs" />
     <Compile Include="MainApp\CreateTicket.xaml.cs">
       <DependentUpon>CreateTicket.xaml</DependentUpon>
     </Compile>
@@ -270,6 +270,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Art\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{1e44269c-ff44-4faa-8bb7-365b99527137}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

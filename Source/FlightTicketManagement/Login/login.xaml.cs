@@ -32,7 +32,7 @@ namespace FlightTicketManagement
         }
 
         private async void login_Click(object sender, RoutedEventArgs e) {
-            if (await APIHelper.Instance.Authenticate(userName.Text, passWord.Password))
+            if (await Authenticater.Instance.Authenticate(userName.Text,passWord.Password))
 
             {
                 MainWindow.Instance.Hide();
