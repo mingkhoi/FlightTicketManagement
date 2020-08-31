@@ -1,0 +1,66 @@
+﻿<Window x:Class="FlightTicketManagement.Views.ChairGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:FlightTicketManagement.Views"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Chọn Ghế Ngồi"
+        Height="500"
+        Width="620"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}">
+
+    <ScrollViewer VerticalScrollBarVisibility="Hidden"
+                  HorizontalScrollBarVisibility="Disabled">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        Margin="5">
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="0 5 0 5">
+                    <Button Background="Gold" />
+                    <TextBlock Text="Ghế Thương Gia"
+                               FontSize="20"
+                               Margin="20 0 0 0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="0 5 0 5">
+                    <Button Background="LightGreen" />
+                    <TextBlock Text="Ghế Thường"
+                               FontSize="20"
+                               Margin="20 0 0 0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="0 5 0 5">
+                    <Button Background="Gray" />
+                    <TextBlock Text="Ghế Đã Được Đặt"
+                               FontSize="20"
+                               Margin="20 0 0 0" />
+                </StackPanel>
+                <Canvas Margin="0 10 0 0"
+                        Height="2"
+                        Background="Black" />
+            </StackPanel>
+                <WrapPanel Grid.Row="1"
+                           Name="chairPanel">
+                    
+                </WrapPanel>
+
+        </Grid>
+    </ScrollViewer>
+</Window>

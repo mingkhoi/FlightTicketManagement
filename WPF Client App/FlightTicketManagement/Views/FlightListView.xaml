@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="FlightTicketManagement.Views.FlightListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:FlightTicketManagement"
+             xmlns:viewmodel="clr-namespace:FlightTicketManagement.ViewModels"
+             xmlns:Controls="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             Background="White"
+             d:DesignHeight="722"
+             d:DesignWidth="1094">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Tìm kiếm chuyến bay"
+                   Grid.Row="0"
+                   FontWeight="Bold"
+                   FontSize="20"
+                   HorizontalAlignment="Center">
+        </TextBlock>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Grid.Row="1">
+            <ComboBox materialDesign:HintAssist.Hint="Thành phố"
+                      FontSize="17"
+                      ItemsSource="{Binding Cities}"
+                      DisplayMemberPath="Name"
+                      Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                      SelectedValue="{Binding SelectedCityId ,Mode=TwoWay}"
+                      Width="988"
+                      SelectedValuePath="Id">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel />
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
+            <Button Background="#FF4AB73A"
+                    Margin="20,0,0,-0.2"
+                    VerticalAlignment="Bottom"
+                    Padding="0"
+                    Width="48"
+                    x:Name="Refresh">
+                <materialDesign:PackIcon Kind="Refresh"
+                                         Width="28"
+                                         Height="24" />
+            </Button>
+        </StackPanel>
+
+        <Controls:Map x:Name="FlightMap"
+                      Grid.Row="2"
+                      xmlns:m="clr-namespace:Helpers"
+                      CredentialsProvider="4TVpiXr4TDrpvUv3Vx1e~6kDfAcRwQPNrxo_cHedf9w~AspdM1J6-KCvBj7qcsE0yLdcDiAoPaOFUTBhJcFdJQKRhaheaEEXUCKY70IUuAxs"
+                      m:MapHelper.Center="{Binding Center}"
+                      Mode="road"
+                      Margin="0 10 0 10"
+                      ZoomLevel="{ Binding Zoom}">
+            <Controls:MapItemsControl ItemsSource="{Binding MapItem}"></Controls:MapItemsControl>
+        </Controls:Map>
+
+        <DataGrid Grid.Row="3"
+                  ItemsSource="{Binding Flights}"
+                  CanUserAddRows="False"
+                  SelectionUnit="FullRow"
+                  AutoGenerateColumns="False"
+                  SelectionMode="Extended"
+                  Margin="0,0,0,0"
+                  IsReadOnly="True"
+                  HorizontalScrollBarVisibility="Hidden"
+                  SelectedItem="{Binding SelectedFlight,Mode=TwoWay}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Điểm khởi hành"
+                                    Binding="{Binding OriginCity}"
+                                    Width="150" />
+                <DataGridTextColumn Header="Sân bay đi"
+                                    Binding="{Binding OriginAP}"
+                                    Width="150" />
+                <DataGridTextColumn Header="Điểm kết thúc"
+                                    Binding="{Binding DestCity}"
+                                    Width="150" />
+                <DataGridTextColumn Header="Sân bay đến"
+                                    Binding="{Binding DestAP}"
+                                    Width="150" />
+                <DataGridTextColumn Header="Thời gian"
+                                    Binding="{Binding Time, StringFormat=hh\\:mm}"
+                                    Width="120" />
+                <DataGridTextColumn Header="Transit"
+                                    Binding="{Binding TransitNum}"
+                                    Width="120" />
+                <DataGridTemplateColumn Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate xmlns:cal="http://www.caliburnproject.org">
+                            <StackPanel Orientation="Horizontal">
+                                <Button cal:Bind.Model="{Binding FlightViewModel, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                        cal:Message.Attach="ShowTransit"
+                                        Margin="5"
+                                        IsEnabled="{Binding IsEnabled}">Details</Button>
+                                <Button cal:Message.Attach="BookTicket"
+                                        Margin="5">Book Ticket</Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+    </Grid>
+
+</UserControl>
